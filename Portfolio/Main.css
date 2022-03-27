@@ -1,0 +1,382 @@
+@font-face {
+    font-family: "Debug";
+    src: url("Fonts/IrishGrover-Regular.ttf")
+  }
+  @font-face {
+    font-family: "roboto";
+    src: url("Fonts/RobotoCondensed-BoldItalic.ttf")
+  }
+  @font-face {
+    font-family: "Dongle-L";
+    src: url("Fonts/Dongle-Light.ttf")
+  }
+  @font-face {
+    font-family: "Dongle-B";
+    src: url("Fonts/Dongle-Bold.ttf")
+  }
+  @font-face {
+      font-family: "yuji";
+      src: url("Fonts/YujiBoku-Regular.ttf"); /*font using @font-face in google fonts using ttf format
+                                                 in various places through out this site*/
+  }
+  @font-face {
+      font-family: "major";
+      src: url("Fonts/MajorMonoDisplay-Regular.ttf");
+  }
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    img{
+        width: max-content;
+    }
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+    img{
+        width:max-content
+    }
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+    img{
+        width: max-content;
+    }
+}
+  /*Specifying and using specific fonts through out hte page for consitance */
+body{
+    counter-reset: pagecount;
+     
+}
+p { counter-increment: pagecount; } 
+p:after { color: white; content: " " counter(pagecount); }
+
+/*Navbar CSS starting*/
+nav a{                                  /*This is a relational selector*/
+    float: right;
+    margin-top: 3%;
+    margin-right: 3%;
+    margin-left: 3%;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    color: #0087ca;
+    font-family: roboto;
+    
+}
+nav a::after{           /*This used to selct after the element add proper hover effect even in the hover
+                            this selcetor has been used its Pseudo elements with generated content */
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);           /*tranformation this is a hovering effect so that the website will be more intractive*/
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: orange;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+nav a:hover:after {                  /*Action peudo class when the user points the mouse towards
+                                     the element of the navbar it gives underline effect*/ /*specificity into consideration*/
+    transform: scaleX(1);           /*tranformation*/
+    transform-origin: bottom left;
+  }
+.active{
+    text-decoration: underline;
+    text-decoration-color: orange;
+    text-decoration-thickness: 2.5px;
+
+}  
+
+#logo {                                 /*specificity into consideration*/
+    width: 10%;
+	height: 5%;
+	float: left;
+	position: relative;
+	top: 3%;
+	left: 5%;
+    margin-top: 1%;
+}
+/*Navbar CSS ending*/
+/*Main.html CSS starting*/
+aside{
+    float: right;
+    margin-top: -10%;
+    left: 60%;
+}
+#Heading{                                                   /*specificity into consideration*/
+    
+    margin-left: 0%;
+    padding-top: 8%;
+    font-size: 200%; 
+    background: linear-gradient(45deg,rgb(0,135,202), orange);      /*gradient give it more colors and look more prominent in the website*/
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    color: red;
+    position: relative;
+    animation-name: example;        /*Animation this to give more playfulness to this site so that the user stays for a while*/
+    animation-duration: 4s;
+    animation-iteration-count: 6;
+}
+@keyframes example {
+    0%   {color:rgb(0,135,202); left:0;}
+    25%  {color:white; left:40%;}
+    50%  {color:orange; right:0%;}
+    75%  {color:white; left:40%;}
+    100% {color:rgb(0,135,202); left:0;}
+  }    
+#Slogan{                                /*specificity into consideration*/
+    margin-top: 0%;
+    margin-left: 3%;
+    font-size: 150%;
+    color: #0087ca;
+    position: relative;
+    animation-name: example;                /*Animation*/
+    animation-duration: 4s;
+    animation-iteration-count: 6;
+}
+.Description{
+    font-size: 130%;
+    color: orange;
+    border-style: outset;           /*boder*/
+    border: black;
+    border-radius: 12px;           /*rounded corners in the border*/
+    font-family: Debug;
+    margin: 0%;	
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);         /*Shadows used to highlight the description
+                                                            and give it more presence to stand out from the other content*/
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+#Graph{                                     /*specificity into consideration*/
+    width: 75%;
+	height: auto;
+	float: left;
+    
+    
+/*Main page Ending*/	
+ 
+}
+/*This is the css of footer starting*/
+#head{                                      /*specificity into consideration*/
+    margin-left:50%;
+}
+
+
+.Bottom{
+    margin-top:40% ;
+	background: -webkit-radial-gradient(orange,rgb(0,135,202) );  /*gradient*/
+	height: 10%;
+	padding: 5%;
+    bottom: 0;
+    color: #0087ca;
+    position: relative;
+}
+
+.FB{
+    margin-left: 17%;
+    margin-top: 0%;
+    color:#0087ca;
+    text-decoration: none;
+    position: relative;
+}
+.FA{
+    margin-left: 17%;
+    margin-top: 0%;
+    color: orange;
+    text-decoration: none;
+    position: relative;
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    position: relative;
+    
+  }
+  
+  .fa:hover {           /*Action peudo class*/
+      opacity: 0.7; /*70% transprency when footer is hovered*/
+  }
+  
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+    margin-left: 16%;
+  }
+  
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+    margin-left: 14%;
+  }
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+    margin-left: 14%;
+  }
+  .fa-instagram {
+    background: #ff00dd;
+    color: white;
+    margin-left: 14%;
+  }
+  
+  
+/*Footer Ending*/
+/*Starting of About CSS*/
+.about{
+    background-color: rgba(0,135,202, 0.5);/*A background color with 50% transprency*/
+    color: orange;
+}
+.MainS{
+    margin-top: 5%;
+    text-align: center;
+    font-family: Dongle-B;
+    
+}
+.vis{
+    text-align: center;
+    font-family: Dongle-B;
+    font-size: 50px;
+    text-overflow: ellipsis;/*Text effects to make it stop overflowing out of the border*/
+}
+.Pvis{
+    text-align: center;
+    font-family: Dongle-L;
+    font-size: 30px;
+    word-wrap: break-word;      /*Text effects*/
+}
+.mis{
+    text-align: center;
+    font-family: Dongle-B;
+    font-size: 50px;
+    word-break: keep-all;       /*Text effects*/
+}
+.Pmis{
+    text-align: center;
+    font-family: Dongle-L;
+    font-size: 30px;
+    word-break: break-all;          /*Text effects*/
+}
+.Go{
+    text-align: center;
+    font-family: Dongle-B;
+    font-size: 50px;
+}
+.Goals{
+    font-family: Dongle-B;
+    font-size: 50px;
+}
+.goalsP{
+    font-family: Dongle-L;
+    font-size: 30px;
+}
+.objecives{
+    font-family: Dongle-B;
+    font-size: 50px;
+}
+.objP > li{                                    /*CHild combinator selector so that to specify which line in the list its under*/
+    font-family: Dongle-L;
+    font-size: 30px;
+}
+.objP > li:last-of-type{                       /*Stuctural selector this is used for dyanamic page when ever is newly added
+                                                 its the least recognized so that the team focuses on others before going this*/
+    text-decoration: line-through;
+  }
+
+:not(h1){  
+      letter-spacing: 1%;                                           /*negation psudo class*/
+    /*Leaving code blank its changing everything*/
+}
+.goalsP > li:nth-last-of-type(3){         /*This is also a structural pseudo class where the nth 
+                                            type of whereas n is 3 in this situation this used
+                                            so that the 3rd type is always highlighted and make it important*/         
+    color: red;
+}
+
+/*Ending of about CSS*/
+/*Start of form CSS*/
+.head1{
+    text-align: center;
+    margin-top: 20%;
+    margin-left: 3%;
+    color: #0087ca;
+    font-family: major;
+}
+.head2{
+
+    text-align: center;
+    margin-top: 0%;
+    margin-left: 4%;
+    color: #0087ca;
+    font-family: major;
+}
+
+
+form.newsletter {           /*This is a relational selector where all descendent of this elements in class newletter will be selected*/
+    margin-top: 3%;
+    margin-left: 40%;
+    text-align: center;
+    color: #0087ca;
+    font-family: major;
+
+}
+
+div.newsletter {            /*This is a relational selector*/
+    display: table-row;
+    color: #0087ca;
+    font-family: major;
+}
+
+label, input {
+    display: table-cell;
+    margin-bottom: 10px;
+    color: #0087ca;
+    font-family: major;
+}
+
+label {
+    padding-right: 10px;
+    color: #0087ca;
+}
+input[type="submit"]{
+    margin-left: 50%;           /*More specfic for the attribute submit or other type attribute sure
+                                 through out the css file no need specify class or ID*/
+    background-color: white;
+    color: #0087ca;
+    font-size: 20px;
+    border-radius: 12px;        /*rounded corners*/
+   
+}
+input[type="submit"]:hover{             /*Attribute selector*/
+    background-color: orange;   
+    color: #0087ca;
+    
+    
+}
+input[type="email"]{                /*Attribute selector*/
+    margin-left: 0%;
+}
+input[type="text"]{                 /*Attribute selector*/
+    margin-left: 0%;
+}
+input:invalid:required{                     /*This is a validity pseudo class so that when the user doesnt
+                                             enter the requiered field it turns red*/
+    border: orange solid;              /*border*/
+}
+/*Start of personal*/
+#personal_pro1{                         /*Specificity into consideration*/
+    text-align: center;
+    font-size: 20px;
+    font-family: yuji;
+    color: orange;
+}
+/*End of personal*/
+
+/*End of form CSS*/
